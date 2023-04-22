@@ -1,14 +1,22 @@
 #
  > clone code
-<code>git clone https://github.com/jakub-malec826/FastAPI_project_python_WSZ.git</code>
+```
+git clone https://github.com/jakub-malec826/FastAPI_project_python_WSZ.git
+```
 
  > create venv
- <code>python -m venv venv</code>
+```
+python -m venv venv
+```
 
  > install libraries
-<code>pip install -r requirements.txt</code>
+```
+pip install -r requirements.txt
+```
 
  > run server
-<code>uvicorn main:mainRouter --reload --port 8000</code>
-
- > fastAPI Docs: <link>127.0.0.1:8000/docs</link>
+```
+uvicorn main:mainRouter --reload --port 8000
+```
+#
+ > [fastAPI Docs](http://127.0.0.1:8000/docs)
