@@ -9,6 +9,15 @@ git clone https://github.com/jakub-malec826/FastAPI_project_python_WSZ.git
 python -m venv venv
 ```
 
+ > run venv: linux | macos
+```
+source venv/bin/activate
+```
+> run venv: windows
+```
+./venv/bin/activate
+```
+
  > install libraries
 ```
 pip install -r requirements.txt
