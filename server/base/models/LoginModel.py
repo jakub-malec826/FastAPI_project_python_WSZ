@@ -1,9 +1,16 @@
+from bson import ObjectId
 from pydantic import BaseModel, Field
 
-from server.base.models import PyObjectID
+from server.base.models.PyObjectID import PyObjectID
 
 
 class LoginModel(BaseModel):
     id: PyObjectID = Field(default_factory=PyObjectID, alias="_id")
-    email: Field(...)
-    password: Field(...)
+    email: str = Field(...)
+    password: str = Field(...)
+    typeOfUser: str = Field(...)
+
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}

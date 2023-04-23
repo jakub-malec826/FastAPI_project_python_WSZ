@@ -2,20 +2,16 @@ from fastapi.encoders import jsonable_encoder
 
 from bson.objectid import ObjectId
 
-from ..models.TeacherModel import TeacherModel
+from server.base.models.TeacherModel import TeacherModel
 
-from ..connect import db
+from server.base.connect import db
 
 
 async def add_teacher(teacher: TeacherModel):
     existedMail = await db["Teachers"].find_one({"email": teacher.email})
-    existedUserName = await db["Teachers"].find_one({"username": teacher.username})
 
     if existedMail is not None:
         return "email already in use"
-
-    if existedUserName is not None:
-        return "username already in use"
 
     teacher.id = ObjectId()
 
